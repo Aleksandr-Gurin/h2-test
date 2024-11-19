@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: yourpassword
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.sql
+
+  # Настройки логирования для liquibase
+  logging:
+    level:
+      liquibase: DEBUG
